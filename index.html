@@ -2,23 +2,214 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Rxmlo - Ana Sayfa</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Rxmlo - Discord Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #000814, #001f3f);
+      color: #fff;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      padding: 15px 0;
+      text-align: center;
+      z-index: 999;
+    }
+    nav a {
+      color: #00bfff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00bfff;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    section {
+      padding: 100px 20px 60px;
+      max-width: 960px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #00bfff, #1e90ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      from { filter: brightness(1); }
+      to { filter: brightness(1.5); }
+    }
+
+    .hero p {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 20px;
+      color: #ccc;
+    }
+
+    h2 {
+      color: #00bfff;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1rem;
+      color: #aaa;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+
+    .social {
+      margin-top: 30px;
+    }
+
+    .social a {
+      color: #00bfff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #00bfff;
+      padding: 6px 14px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      background: #00bfff;
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.3rem; }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <nav>
-      <a href="komutlar.html">Komutlar</a>
-      <a href="oyver.html">Oy Ver</a>
-      <a href="destek.html">Destek</a>
-      <a href="davet.html">Davet</a>
+      <a href="#" onclick="delayedRedirect('komutlar.html')">Komutlar</a>
+      <a href="#" onclick="delayedRedirect('oyver.html')">Oy Ver</a>
+      <a href="#" onclick="delayedRedirect('destek.html')">Destek</a>
+      <a href="#" onclick="delayedRedirect('davet.html')">Davet</a>
     </nav>
   </header>
-  <section>
-    <h1>Rxmlo</h1>
-    <p>Yeni nesil, gelişmiş sistemli ve yönetilebilir Discord botu.</p>
+
+  <section class="hero">
+    <h1>🤖 Rxmlo</h1>
+    <p>Gelişmiş altyapısı, etkileyici modülleri ve özel panel desteğiyle modern Discord botu deneyimi sunar.</p>
   </section>
-  <div class="footer">Bu site bot sahibi <strong>WnersDev</strong> tarafından geliştirildi!</div>
-  <script src="script.js"></script>
+
+  <section>
+    <h2>Bot Hakkında</h2>
+    <p>
+      Rxmlo, kullanıcı deneyimini en üst düzeyde tutmak için tasarlanmış bir Discord botudur.
+      Hem eğlenceli hem de ciddi topluluklar için ihtiyaç duyulabilecek tüm sistemleri içinde barındırır.
+      Bot; moderasyon, müzik, seviye, kayıt, giriş/çıkış, özel mesaj ve daha fazlasını destekler.
+    </p>
+  </section>
+
+  <section>
+    <h2>Neden Rxmlo?</h2>
+    <p>
+      - Kullanıcı dostu arayüzler <br>
+      - Hızlı ve optimize altyapı <br>
+      - Mobil uyumlu panel desteği <br>
+      - CroxyDB ile veri güvenliği <br>
+      - Türkçe & İngilizce dil desteği <br>
+      - Komutlar ve sistemler kolayca yönetilir
+    </p>
+  </section>
+
+  <section>
+    <h2>Popüler Özellikler</h2>
+    <p>
+      ✅ Slash & prefix destekli komut yapısı <br>
+      ✅ Gelişmiş otomatik rol sistemi <br>
+      ✅ Panelden ayarlanabilir giriş/çıkış mesajları <br>
+      ✅ Oylamalı müzik geçiş sistemi <br>
+      ✅ Butonlu müzik menüsü <br>
+      ✅ Modern yardım menüsü ve hata log sistemi
+    </p>
+  </section>
+
+  <section>
+    <h2>Sık Yapılan Hatalar</h2>
+    <p>
+      ⚠️ Slash komutlar görünmüyorsa botu yeniden yetkilendirin. <br>
+      ⚠️ Bot mesaj atmıyorsa kanal yetkilerini kontrol edin. <br>
+      ⚠️ Komutlar çalışmıyorsa: reload/restart komutu kullanın. <br>
+      ⚠️ Panelden yapılan ayarlar kaydolmuyorsa: Bot yeniden başlatılmalı.
+    </p>
+  </section>
+
+  <div class="footer">
+    Bu site bot sahibi <strong>WnersDev</strong> tarafından geliştirildi!  
+    <div class="social">
+      <a href="https://discord.gg/rxmlo" target="_blank">Discord</a>
+      <a href="https://github.com/wnersdev" target="_blank">GitHub</a>
+      <a href="https://rxmloweb.com.tr" target="_blank">Web</a>
+    </div>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+
+    function delayedRedirect(url) {
+      alert("Yönlendiriliyor...");
+      setTimeout(() => {
+        window.location.href = url;
+      }, 3000);
+    }
+  </script>
+
 </body>
 </html>
